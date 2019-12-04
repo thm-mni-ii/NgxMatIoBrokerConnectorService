@@ -1,0 +1,35 @@
+<div style="max-height: 401px; max-width: 401px">
+  <ioBrokerConn-chart [alias]="'Alias'"
+                      [type]="'line'"
+                      [maxEntries]="10"
+                      [objectPath]="'deconz.0.Sensors.2'"
+                      [state]="'buttonevent'"
+                      [color]="{'borderColor': 'black', 'backgroundColor': 'yellow'}">
+  </ioBrokerConn-chart>
+</div>
+
+<div style="max-height: 401px; max-width: 401px">
+  <ioBrokerConn-chart
+    [alias]="'Zauber'"
+    [type]="'pie'"
+    [objectPath]="'deconz.0.Sensors.2'"
+    [state]="'buttonevent'"
+    [color]="{'borderColor': 'black',
+                                'backgroundColors': ['#4cee17','#e5d92d','#a9b88d','#41096a','#6015fc','#59cf51','#290f9b','#9ac621']}">
+  </ioBrokerConn-chart>
+</div>
+
+<div>
+  <ioBrokerConn-datadisplay   [objectPath]="'deconz.0.Sensors.2'"
+                        [state]="'buttonevent'"
+                        [bold]="true"
+                        ></ioBrokerConn-datadisplay>
+
+  <ioBrokerConn-datadisplay   [objectPath]="'deconz.0.Sensors.2'"
+                              [state]="'buttonevent'"
+                              [bold]="false"
+                              [color]="'red'"
+  ></ioBrokerConn-datadisplay>
+</div>
+
+
