@@ -1,0 +1,8 @@
+<div style="text-align: center;">
+  <fa-icon [icon]="['fas', 'lightbulb']" size="5x" (click)="clickLightbulb()" *ngIf="lightbulbState"></fa-icon>
+  <fa-icon [icon]="['far', 'lightbulb']" size="5x" (click)="clickLightbulb()" *ngIf="!lightbulbState"></fa-icon>
+  <br/>
+  {{this.alias}}
+</div>
+<br/>
+<mat-slider [min]="minValue" [max]="maxValue" step="1" [(ngModel)]="sliderValue" (change)="sliderDataChanged($event)"></mat-slider>

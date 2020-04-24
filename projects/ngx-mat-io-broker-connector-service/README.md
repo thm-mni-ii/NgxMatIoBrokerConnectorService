@@ -21,6 +21,12 @@ For the chart feature both ng2-charts and chartjs have to be installed in your a
 
 `npm install --save chart.js`
 
+For the lights component Fontawesome and Angular Material have to be installed.
+
+`ng add @fortawesome/angular-fontawesome@<version>`
+
+`ng add @angular/material`
+
 ## Installation
 
 `npm i ngx-mat-io-broker-connector-service`
@@ -230,41 +236,65 @@ Displays a datadisplay when passed on the correct paramenter as settings. It onl
       }
     ```
    
-6. If the charts feature is going to be used, you need to add the HTML Placeholder into the correct position in your HTML file and pass on the needed parameter.
+### Additional Components
 
-    Example for line chart:
+#### Chart-Component
+
+To use the Chart-Component, simply add the HTML-Placeholder at the correct position into your HTML file and pass on the required parameters. 
+   
+Example for line chart:
     
-    ```
-   <ioBrokerConn-chart  [alias]="'Alias'" 
-                         [type]="'line'" 
-                         [maxEntries]="10" 
-                         [objectPath]="'deconz.0.Sensors.2'"
-                         [state]="'buttonevent'" 
-                         [backgroundColor]="'red'" 
-                         [borderColor]="'black'"></ioBrokerConn-chart>
+       <ioBrokerConn-chart  
+                [alias]="'Alias'" 
+                [type]="'line'" 
+                [maxEntries]="10" 
+                [objectPath]="'deconz.0.Sensors.2'"
+                [state]="'buttonevent'" 
+                [backgroundColor]="'red'" 
+                [borderColor]="'black'"
+       ></ioBrokerConn-chart>
+                
+Example for pie chart: 
+
+ ```
+    <ioBrokerConn-chart  
+                [alias]="'Alias'" 
+                [type]="'pie'" 
+                [maxEntries]="10" 
+                [objectPath]="'deconz.0.Sensors.2'"
+                [state]="'buttonevent'"
+    ></ioBrokerConn-chart>
    ```
    
-   Example for pie chart: 
-   
-   ```
-    <ioBrokerConn-chart  [alias]="'Alias'" 
-                         [type]="'pie'" 
-                         [maxEntries]="10" 
-                         [objectPath]="'deconz.0.Sensors.2'"
-                         [state]="'buttonevent'"></ioBrokerConn-chart>
-   ```
-   
-7. If the datadisplay feature is going to be used, you need to add the HTML Placeholder into the correct position in your HTML file and pass on the needed parameter.
-   
-   Example:
-   
-   ```
-   <ioBrokerConn-datadisplay   [objectPath]="'deconz.0.Sensors.2'"
-                                 [state]="'buttonevent'"
-                                 [bold]="false"
-                                 [color]="'red'"
+#### Datadisplay-Component
+
+To use the Datadisplay-Component, simply add the HTML-Placeholder at the correct position into your HTML file and pass on the required parameters. 
+
+Example:
+
+ ```
+   <ioBrokerConn-datadisplay   
+                 [objectPath]="'deconz.0.Sensors.2'"
+                 [state]="'buttonevent'"
+                 [bold]="false"
+                 [color]="'red'"
      ></ioBrokerConn-datadisplay>
    ```
+
+#### Lights-Component
+
+To use the Lights-Component, simply add the HTML-Placeholder at the correct position into your HTML file and pass on the required parameters. 
+
+ ```
+ <ioBrokerConn-lights 
+                  [objectPath]="'deconz.0.Lights.2'"
+                  [onState]="'on'"
+                  [brightnessState]="'bri'"
+                  [alias]="'Wohnzimmer'"
+                  [minValue]="1"
+                  [maxValue]="254"
+   ></ioBrokerConn-lights>
+ ```
 
 **Note:** For further documentation, check out the example provided in the src directory.
 

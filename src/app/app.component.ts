@@ -1,6 +1,9 @@
 import {Component} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {NgxMatIoBrokerConnectorService} from 'ngx-mat-io-broker-connector-service';
+import {FaIconLibrary} from "@fortawesome/angular-fontawesome";
+import {fas} from "@fortawesome/free-solid-svg-icons";
+import {far} from "@fortawesome/free-regular-svg-icons";
 
 @Component({
   selector: 'mat-ta-root',
@@ -16,7 +19,8 @@ export class AppComponent {
   // Represents the subscription to the behaviourSubject in the ioBrokerConnService for all data that the socket adapter returns
   allDataSubscription: Subscription;
 
-  constructor(public ioBrokerConn: NgxMatIoBrokerConnectorService) {
+  constructor(public ioBrokerConn: NgxMatIoBrokerConnectorService, private library: FaIconLibrary) {
+    library.addIconPacks(fas, far);
     // First a connection to the socket adapter has to be created
     // For that call the connect function in the ioBrokerConnService and pass on the IP and the Port
     this.ioBrokerConn.connect('10.48.2.176', 8080).then(() => {
@@ -25,7 +29,12 @@ export class AppComponent {
       let variable = this.ioBrokerConn.getter('deconz.0.Sensors.2', 'buttonevent', 'val');
       let variable2 = this.ioBrokerConn.getter('deconz.0.Sensors.2', 'buttonevent', '');
       let states = this.ioBrokerConn.getAllStates();
-      this.ioBrokerConn.setter('deconz.0.Sensors.2', 'buttonevent', 1337);
+      this.ioBrokerConn.setter('deconz.0.Sensors.2', 'buttonevent', 8000);
+      this.ioBrokerConn.setter('deconz.0.Sensors.2', 'buttonevent', 200);
+      this.ioBrokerConn.setter('deconz.0.Sensors.2', 'buttonevent', 3000);
+      this.ioBrokerConn.setter('deconz.0.Sensors.2', 'buttonevent', 4000);
+      this.ioBrokerConn.setter('deconz.0.Sensors.2', 'buttonevent', 8000);
+      this.ioBrokerConn.setter('deconz.0.Sensors.2', 'buttonevent', 7000);
     }).catch((err) => {
       // If connection fails
       console.log(err);

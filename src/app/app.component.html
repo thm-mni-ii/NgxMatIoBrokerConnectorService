@@ -20,16 +20,23 @@
 </div>
 
 <div>
-  <ioBrokerConn-datadisplay   [objectPath]="'deconz.0.Sensors.2'"
-                        [state]="'buttonevent'"
-                        [bold]="true"
-                        ></ioBrokerConn-datadisplay>
+  <ioBrokerConn-datadisplay [objectPath]="'deconz.0.Sensors.2'"
+                            [state]="'buttonevent'"
+                            [bold]="true"
+  ></ioBrokerConn-datadisplay>
 
-  <ioBrokerConn-datadisplay   [objectPath]="'deconz.0.Sensors.2'"
-                              [state]="'buttonevent'"
-                              [bold]="false"
-                              [color]="'red'"
+  <ioBrokerConn-datadisplay [objectPath]="'deconz.0.Sensors.2'"
+                            [state]="'buttonevent'"
+                            [bold]="false"
+                            [color]="'red'"
   ></ioBrokerConn-datadisplay>
 </div>
-
-
+<div style="max-height: 140px; max-width: 140px">
+  <ioBrokerConn-lights [objectPath]="'deconz.0.Lights.2'"
+                       [onState]="'on'"
+                       [brightnessState]="'bri'"
+                       [alias]="'Wohnzimmer'"
+                       [minValue]="1"
+                       [maxValue]="254"
+  ></ioBrokerConn-lights>
+</div>

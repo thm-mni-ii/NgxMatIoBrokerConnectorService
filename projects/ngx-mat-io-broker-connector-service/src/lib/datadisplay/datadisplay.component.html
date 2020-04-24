@@ -1,6 +1,7 @@
 <div *ngIf="bold" class="bold" [ngStyle]="{'color': color}">
+  {{value}}
+</div>
 
-  <div *ngIf="!bold" [ngStyle]="{'color': color}">
-    {{value}}
-  </div>
+<div *ngIf="!bold" [ngStyle]="{'color': color}">
+  {{value}}
 </div>
